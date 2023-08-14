@@ -1,4 +1,4 @@
-import requests_with_caching
+import requests_with_caching    #This module is not available outside the Runestone Interactive environment 
 import json
 
 def get_movies_from_tastedive(inp_str):
@@ -7,7 +7,7 @@ def get_movies_from_tastedive(inp_str):
     params_diction['q'] = inp_str
     params_diction['type'] = 'movies'
     params_diction['limit'] = 5
-    tastedive_resp = requests_with_caching.get(baseurl, params = params_diction)
+    tastedive_resp = requests_with_caching.get(baseurl, params = params_diction)    #Querying data from cache
     json_result = tastedive_resp.json()
     return json_result
 
@@ -36,7 +36,7 @@ def get_movie_data(desired_movie):
     params_diction2 = {}
     params_diction2['t'] = desired_movie
     params_diction2['r'] = 'json'
-    omdb_resp = requests_with_caching.get(baseurl, params = params_diction2)
+    omdb_resp = requests_with_caching.get(baseurl, params = params_diction2)    #Querying data from cache
     json_omdb_result = omdb_resp.json()
     return json_omdb_result
 
